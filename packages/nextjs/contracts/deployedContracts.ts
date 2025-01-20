@@ -4,6 +4,174 @@
  */
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
-const deployedContracts = {} as const;
+const deployedContracts = {
+  31337: {
+    TradeContract: {
+      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tradeId",
+              type: "uint256",
+            },
+          ],
+          name: "approveTrade",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tradeId",
+              type: "uint256",
+            },
+          ],
+          name: "fetchTradeDetails",
+          outputs: [
+            {
+              internalType: "address",
+              name: "buyer",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "seller",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "arbiter",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "amount",
+              type: "uint256",
+            },
+            {
+              internalType: "enum TradeContract.TradeState",
+              name: "state",
+              type: "uint8",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tradeId",
+              type: "uint256",
+            },
+          ],
+          name: "initiateDispute",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_sellerAddress",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "_mediatorAddress",
+              type: "address",
+            },
+          ],
+          name: "initiateTrade",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "payable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tradeId",
+              type: "uint256",
+            },
+            {
+              internalType: "bool",
+              name: "favorSeller",
+              type: "bool",
+            },
+          ],
+          name: "settleDispute",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "tradeCounter",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          name: "trades",
+          outputs: [
+            {
+              internalType: "address",
+              name: "buyerAddress",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "sellerAddress",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "mediatorAddress",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tradeAmount",
+              type: "uint256",
+            },
+            {
+              internalType: "enum TradeContract.TradeState",
+              name: "tradeState",
+              type: "uint8",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+      ],
+      inheritedFunctions: {},
+    },
+  },
+} as const;
 
 export default deployedContracts satisfies GenericContractsDeclaration;
